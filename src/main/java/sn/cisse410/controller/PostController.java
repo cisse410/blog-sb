@@ -65,4 +65,13 @@ public class PostController {
         }
     }
 
+    @GetMapping("/posts/search/{title}")
+    public ResponseEntity<?> searchByName(@PathVariable String title) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(postService.searchByName(title));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
 }

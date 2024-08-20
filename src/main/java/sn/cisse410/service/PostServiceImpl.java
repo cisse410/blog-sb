@@ -54,4 +54,9 @@ public class PostServiceImpl implements PostService {
             throw new EntityNotFoundException("Aucun post trouvé avec l'id " + id);
         }
     }
+
+    @Override
+    public List<Post> searchByName(String title) {
+        return postRepository.findAllByTitleContaining(title);
+    }
 }

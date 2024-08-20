@@ -27,4 +27,10 @@ public interface PostService {
      * @param id
      */
     void likePost(Long id);
+
+    /**
+     * @param name
+     * @return
+     */
+    List<Post> searchByName(String title);
 }
